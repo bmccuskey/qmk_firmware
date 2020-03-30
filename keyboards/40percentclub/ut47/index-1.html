@@ -1,0 +1,25 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Unknown </title></head><body>
+<h1 id="ut47">ut47</h1>
+<h1 id="_1"><img alt="ut47" src="https://i.imgur.com/ZDKZQaj.jpg" /></h1>
+<p>Somewhere between ortholinear and standard offset. Created to have all the same functions on a Planck in a keyboard but with a more conventional keyboard row stagger.</p>
+<p>Keyboard Maintainer: <a href="https://github.com/filoxo">filoxo</a>, [network_operations]<br />
+Hardware Supported: <a href="http://www.40percent.club/2016/10/gnap-20-plateless.html">PCB design</a>, Arduino Pro Micro<br />
+Hardware Availability: <a href="http://www.40percent.club/2017/03/ordering-pcb.html">How to order</a></p>
+<h3 id="instructions">Instructions</h3>
+<p>To flash the UT47 without LEDs (single controller), run:</p>
+<pre><code>make 40percentclub/ut47:default
+</code></pre>
+<p>To enable the UT47 LEDs (dual controller), run this for the main controller:</p>
+<pre><code>make 40percentclub/ut47:default LED_ENABLE=yes
+</code></pre>
+<p>Or you can add <code>LED_ENABLE = yes</code> to <em>rules.mk</em></p>
+<p>And then flash <a href="LED_controls.ino">LED_controls.ino</a> to the second controller using <a href="https://www.arduino.cc/en/Main/Software">Arduino IDE</a> or similar. NOTE: Arduino IDE will require importing additional libraries to compile.</p>
+<p><small>The reason this is an "opt-in" feature is to prevent sending serial communication over the pin, in case it ends up being used for something else (like RGB underglow).</small></p>
+<h3 id="layout">Layout</h3>
+<p>Go to the <a href="keymaps/default/readme.md">default layout README</a> for more information.</p>
+<h3 id="additional-info">Additional info</h3>
+<p>Credit: Forked from <a href="https://github.com/di0ib/tmk_keyboard/tree/master/keyboard/gnap">di0ib TMK version</a></p>
+<p>See <a href="https://docs.qmk.fm/#/getting_started_build_tools">build environment setup</a> then the <a href="https://docs.qmk.fm/#/getting_started_make_guide">make instructions</a> for more information.</p>
+<h3 id="build-guide">Build Guide</h3>
+<p><a href="https://www.reddit.com/r/MechanicalKeyboards/comments/7wqktu/gnap_the_cheap_40/">u/network_operations' build guide thread</a></p>
+</body></html>
